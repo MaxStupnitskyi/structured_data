@@ -1,6 +1,6 @@
 export const nextJsComponent = `import Script from 'next/script';
 
-const data = \`{...}\` // описуємо об'єкт зі структурованими даними
+const data = {...} // описуємо об'єкт зі структурованими даними
 
 type DataProps = {
   data: {

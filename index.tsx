@@ -24,24 +24,24 @@ import tomorrow from 'react-syntax-highlighter/dist/cjs/styles/prism/tomorrow';
 
 const theme = {
   primary: '#fff',
-  secondary: '#2d2d2d',
-  tertiary: '#03A9FC',
+  secondary: '#fc8803',
+  tertiary: '#101010',
   quartenary: '#CECECE',
 };
 
 const Presentation = () => (
-  <Deck template={() => <DefaultTemplate />}>
+  <Deck theme={{colors: theme}} template={() => <DefaultTemplate />}>
 
-    <Slide backgroundColor={theme.secondary}>
+    <Slide>
       <FlexBox height="100%">
-        <Heading fontSize={'h1'} color={theme.tertiary}>
+        <Heading fontSize={'h1'}>
           Structured Data
         </Heading>
       </FlexBox>
     </Slide>
 
     <Slide>
-      <Heading fontSize={'h2'} color={theme.tertiary}>
+      <Heading fontSize={'h2'}>
         Що таке структуровані дані?
       </Heading>
       <FlexBox height={'100%'}>
@@ -54,7 +54,7 @@ const Presentation = () => (
     </Slide>
 
     <Slide>
-      <Heading fontSize={'h3'} color={theme.tertiary}>
+      <Heading fontSize={'h3'}>
         Формати
       </Heading>
       <FlexBox>
@@ -104,9 +104,9 @@ const Presentation = () => (
       </CodePane>
     </Slide>
 
-    <Slide backgroundColor={theme.secondary}>
+    <Slide>
       <FlexBox height="100%">
-        <Heading color={theme.tertiary}>Результат ➡️</Heading>
+        <Heading>Результат ➡️</Heading>
       </FlexBox>
     </Slide>
 
@@ -117,13 +117,25 @@ const Presentation = () => (
     </Slide>
 
     <Slide>
-      <Heading fontSize={'h3'} color={theme.tertiary}>
+      <Heading fontSize={'h3'}>
         React component (example with Next.JS)
       </Heading>
       <FlexBox height="100%">
         <CodePane language="tsx" theme={tomorrow} highlightRanges={[3, 12, 13, [14, 15]]}>
           {nextJsComponent}
         </CodePane>
+      </FlexBox>
+    </Slide>
+
+    <Slide>
+      <Heading>Перевірка наявності структурованих даних на сторінці</Heading>
+      <FlexBox height={'100%'}>
+        <Link
+          target="_blank"
+          href="https://search.google.com/test/rich-results"
+        >
+          Google Rich Results
+        </Link>
       </FlexBox>
     </Slide>
 
@@ -141,7 +153,14 @@ const Presentation = () => (
 
     <Slide>
       <Heading>Docs</Heading>
-      <FlexBox height={'100%'}>
+      <FlexBox height={'100%'} flexDirection={'column'} >
+        <Link
+          target="_blank"
+          href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+          mb={48}
+        >
+          Google Documentation
+        </Link>
         <Link
           target="_blank"
           href="https://schema.org/"
